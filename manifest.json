@@ -1,0 +1,17 @@
+{
+  "name": "Continue To Visit",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "常用网址访问外链时，跳过提示页继续访问！",
+  "content_scripts": [
+    {
+      "js": ["src/app.js"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["tabs"]
+}
