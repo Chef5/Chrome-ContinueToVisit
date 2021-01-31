@@ -2,7 +2,7 @@
  * @Author: Patrick-Jun 
  * @Date: 2021-01-31 19:21:01 
  * @Last Modified by: Patrick-Jun
- * @Last Modified time: 2021-01-31 21:40:54
+ * @Last Modified time: 2021-01-31 21:55:54
  */
 
 "use strict";
@@ -45,7 +45,6 @@ function run() {
     return;
   }
   const targetUrl = getTargetUrl(window.location.href, matchParams);
-  alert(targetUrl)
   if (!targetUrl) {
     return;
   }
