@@ -12,6 +12,5 @@
       ],
       "run_at": "document_start"
     }
-  ],
-  "permissions": ["tabs"]
+  ]
 }
