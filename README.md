@@ -14,6 +14,11 @@
 - 支持如”百度贴吧“需要在页面中获取的外链
 - 支持自定义配置站点
 
+## 安装
+
+- Chrome: https://chrome.google.com/webstore/detail/continue-to-visit/nabahgobhkeppllhmnkplegdfkehliab
+- Firefox: https://addons.mozilla.org/zh-CN/firefox/addon/continue-to-visit/
+- Edge: 官方审核中
 ## 开发
 
 - 开启开发者模式，重启浏览器后
