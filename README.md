@@ -18,7 +18,7 @@
 
 - Chrome: https://chrome.google.com/webstore/detail/continue-to-visit/nabahgobhkeppllhmnkplegdfkehliab
 - Firefox: https://addons.mozilla.org/zh-CN/firefox/addon/continue-to-visit/
-- Edge: 官方审核中
+- Edge: https://microsoftedge.microsoft.com/addons/detail/lebcfgkhnnokjclpgkddapohlkjeemoa
 ## 开发
 
 - 开启开发者模式，重启浏览器后
