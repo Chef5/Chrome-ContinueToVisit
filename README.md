@@ -18,12 +18,17 @@
 
 ``` json
 {
-  "name": "知乎", // 站点名称
-  "domain": "link.zhihu.com", // 站点域名
-  "exactMatch": "", // 精确校验
-  "targetKey": "target", // 目标url字段
+  "name": "知乎",
+  "domain": "link.zhihu.com",
+  "exactMatch": "",
+  "targetKey": "target",
 },
 ```
+
+- name: 站点名称
+- domain: 站点域名
+- exactMatch: 精确校验url（少数网站中转域名和主站点域名是一样的，例如”简书“，这时候就需要更精确的url匹配了）
+- targetKey: 目标url字段
 
 ## 安装
 
