@@ -2,7 +2,7 @@
  * @Author: Patrick-Jun 
  * @Date: 2021-01-31 19:21:01 
  * @Last Modified by: Patrick-Jun
- * @Last Modified time: 2021-08-12 10:24:44
+ * @Last Modified time: 2021-08-12 10:52:09
  */
 
 "use strict";
@@ -108,10 +108,18 @@ function getTargetUrl(fullUrl, matchParams) {
  * @returns {*} 网站列表
  */
 function getWebsites() {
-  const websites = localStorage.getItem('__chrome_ctv_websites');
+  const websitesText = localStorage.getItem('__chrome_ctv_websites');
+  let websites = [];
+  try {
+    websites = JSON.parse(websitesText);
+  } catch (error) {
+    websites = [];
+  }
   get('https://raw.githubusercontent.com/Patrick-Jun/Chrome-ContinueToVisit/main/src/websites.json', function(res) {
     if (res) {
-      localStorage.setItem('__chrome_ctv_websites', res);
+      localStorage.setItem('__chrome_ctv_websites', JSON.stringify(res));
+    } else {
+      localStorage.setItem('__chrome_ctv_websites', JSON.stringify([]));
     }
   });
   return websites && websites.length > 0 ? websites : null;
