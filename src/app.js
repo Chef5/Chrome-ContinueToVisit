@@ -2,12 +2,12 @@
  * @Author: Patrick-Jun 
  * @Date: 2021-01-31 19:21:01 
  * @Last Modified by: Patrick-Jun
- * @Last Modified time: 2021-01-31 21:55:54
+ * @Last Modified time: 2021-08-12 10:24:44
  */
 
 "use strict";
 // 需要校验的网址配置
-const websites = [
+const websites = getWebsites() || [
   {
     name: '知乎', // 站点名称
     domain: 'link.zhihu.com', // 站点域名
@@ -31,6 +31,18 @@ const websites = [
     domain: 'mail.qq.com',
     exactMatch: 'mail.qq.com/cgi-bin/readtemplate?t=safety&check=false',
     targetKey: 'gourl',
+  },
+  {
+    name: 'segmentfault',
+    domain: 'link.segmentfault.com',
+    exactMatch: '',
+    targetKey: 'url',
+  },
+  {
+    name: '掘金',
+    domain: 'link.juejin.cn',
+    exactMatch: '',
+    targetKey: 'target',
   },
 ];
 
@@ -90,4 +102,38 @@ function getTargetUrl(fullUrl, matchParams) {
   }
   return decodeURIComponent(targetUrl);
 }
+
+/**
+ * @description 获取网站列表
+ * @returns {*} 网站列表
+ */
+function getWebsites() {
+  const websites = localStorage.getItem('__chrome_ctv_websites');
+  get('https://raw.githubusercontent.com/Patrick-Jun/Chrome-ContinueToVisit/main/src/websites.json', function(res) {
+    if (res) {
+      localStorage.setItem('__chrome_ctv_websites', res);
+    }
+  });
+  return websites && websites.length > 0 ? websites : null;
+}
+
+/**
+ * @description get请求
+ * @param url 目标地址
+ * @param callback 回调
+ */
+function get(url, callback) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('get', url);
+  xhr.send();
+  xhr.onload = function() {
+    try {
+      const json = JSON.parse(xhr.responseText);
+      callback(json);
+    } catch (error) {
+      callback(false);
+    }
+  }
+}
+
 

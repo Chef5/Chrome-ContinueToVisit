@@ -1,0 +1,38 @@
+[
+  {
+    "name": "知乎",
+    "domain": "link.zhihu.com",
+    "exactMatch": "",
+    "targetKey": "target"
+  },
+  {
+    "name": "CSDN",
+    "domain": "link.csdn.net",
+    "exactMatch": "",
+    "targetKey": "target"
+  },
+  {
+    "name": "简书",
+    "domain": "www.jianshu.com",
+    "exactMatch": "www.jianshu.com/go-wild?",
+    "targetKey": "url"
+  },
+  {
+    "name": "QQ邮箱",
+    "domain": "mail.qq.com",
+    "exactMatch": "mail.qq.com/cgi-bin/readtemplate?t=safety&check=false",
+    "targetKey": "gourl"
+  },
+  {
+    "name": "segmentfault",
+    "domain": "link.segmentfault.com",
+    "exactMatch": "",
+    "targetKey": "url"
+  },
+  {
+    "name": "掘金",
+    "domain": "link.juejin.cn",
+    "exactMatch": "",
+    "targetKey": "target"
+  }
+]
