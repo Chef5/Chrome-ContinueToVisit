@@ -34,5 +34,11 @@
     "domain": "link.juejin.cn",
     "exactMatch": "",
     "targetKey": "target"
+  },
+  {
+    "name": "微信开放社区",
+    "domain": "developers.weixin.qq.com",
+    "exactMatch": "developers.weixin.qq.com/community/middlepage/href",
+    "targetKey": "href"
   }
 ]

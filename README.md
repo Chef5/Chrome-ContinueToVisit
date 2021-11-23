@@ -22,7 +22,7 @@
   "domain": "link.zhihu.com",
   "exactMatch": "",
   "targetKey": "target",
-},
+}
 ```
 
 - name: 站点名称
@@ -30,7 +30,11 @@
 - exactMatch: 精确校验url（少数网站中转域名和主站点域名是一样的，例如”简书“，这时候就需要更精确的url匹配了）
 - targetKey: 目标url字段
 
-## 安装
+## 安装包
+
+https://cloud.189.cn/web/share?code=MnQzamjQ732a（访问码：q6sa）
+
+## 从商店安装
 
 - Chrome: https://chrome.google.com/webstore/detail/continue-to-visit/nabahgobhkeppllhmnkplegdfkehliab
 - Firefox: https://addons.mozilla.org/zh-CN/firefox/addon/continue-to-visit/

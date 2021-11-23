@@ -2,10 +2,12 @@
  * @Author: Patrick-Jun 
  * @Date: 2021-01-31 19:21:01 
  * @Last Modified by: Patrick-Jun
- * @Last Modified time: 2021-08-12 10:52:09
+ * @Last Modified time: 2021-11-22 23:10:09
  */
 
 "use strict";
+// 校验网址更新频率
+const updateHours = 24;
 // 需要校验的网址配置
 const websites = getWebsites() || [
   {
@@ -108,20 +110,29 @@ function getTargetUrl(fullUrl, matchParams) {
  * @returns {*} 网站列表
  */
 function getWebsites() {
-  const websitesText = localStorage.getItem('__chrome_ctv_websites');
   let websites = [];
   try {
-    websites = JSON.parse(websitesText);
+    chrome.storage.local.get(['__chrome_ctv_websites'], (result) => {
+      websites = JSON.parse(result['__chrome_ctv_websites']);
+    });
   } catch (error) {
     websites = [];
   }
-  get('https://raw.githubusercontent.com/Patrick-Jun/Chrome-ContinueToVisit/main/src/websites.json', function(res) {
-    if (res) {
-      localStorage.setItem('__chrome_ctv_websites', JSON.stringify(res));
-    } else {
-      localStorage.setItem('__chrome_ctv_websites', JSON.stringify([]));
-    }
-  });
+  // 从github更新website
+  try {
+    chrome.storage.local.get(['__chrome_ctv_update'], (result) => {
+      const now = (new Date()).getTime();
+      const update = result['__chrome_ctv_update'];
+      if (!update || now - update > updateHours * 3600000) {
+        get('http://v1.hot.isdz.cn/github/Chrome-ContinueToVisit/main/src/websites.json', (res) => {
+          chrome.storage.local.set({ '__chrome_ctv_websites': JSON.stringify(res || []) });
+          chrome.storage.local.set({ '__chrome_ctv_update': now });
+        });
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
   return websites && websites.length > 0 ? websites : null;
 }
 
