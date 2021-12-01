@@ -2,7 +2,7 @@
  * @Author: Patrick-Jun 
  * @Date: 2021-01-31 19:21:01 
  * @Last Modified by: Patrick-Jun
- * @Last Modified time: 2021-11-22 23:10:09
+ * @Last Modified time: 2021-12-01 12:04:31
  */
 
 "use strict";
@@ -124,7 +124,8 @@ function getWebsites() {
       const now = (new Date()).getTime();
       const update = result['__chrome_ctv_update'];
       if (!update || now - update > updateHours * 3600000) {
-        get('http://v1.hot.isdz.cn/github/Chrome-ContinueToVisit/main/src/websites.json', (res) => {
+        const protocol = location.protocol;
+        get(`${protocol}//v1.hot.isdz.cn/github/Chrome-ContinueToVisit/main/src/websites.json`, (res) => {
           chrome.storage.local.set({ '__chrome_ctv_websites': JSON.stringify(res || []) });
           chrome.storage.local.set({ '__chrome_ctv_update': now });
         });
