@@ -21,7 +21,7 @@
   "name": "知乎",
   "domain": "link.zhihu.com",
   "exactMatch": "",
-  "targetKey": "target",
+  "targetKey": "target"
 }
 ```
 
