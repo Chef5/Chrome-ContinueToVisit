@@ -1,6 +1,6 @@
 {
   "name": "Continue To Visit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "manifest_version": 3,
   "description": "常用网址访问外链时，跳过提示页继续访问！",
   "content_scripts": [
