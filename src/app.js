@@ -66,7 +66,7 @@ let websites = websitesDefault;
 // 运行
 try {
   chrome.storage.local.get(['__chrome_ctv_websites'], (result) => {
-    websites = JSON.parse(result['__chrome_ctv_websites']);
+    websites = JSON.parse(result['__chrome_ctv_websites'] || '[]');
     run();
   });
 } catch (error) {
@@ -144,7 +144,7 @@ function updateWebsites() {
       const update = result['__chrome_ctv_update'];
       if (!update || now - update > updateHours * 3600000) {
         const protocol = location.protocol;
-        get(`${protocol}//v1.hot.isdz.cn/github/Chrome-ContinueToVisit/main/src/websites.json`, (res) => {
+        get(`${protocol}//v1.hot.1zdz.cn/github/Chrome-ContinueToVisit/main/src/websites.json`, (res) => {
           chrome.storage.local.set({ '__chrome_ctv_websites': JSON.stringify(res || []) });
           chrome.storage.local.set({ '__chrome_ctv_update': now });
         });
