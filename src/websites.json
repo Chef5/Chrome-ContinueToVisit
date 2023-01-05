@@ -40,5 +40,11 @@
     "domain": "developers.weixin.qq.com",
     "exactMatch": "developers.weixin.qq.com/community/middlepage/href",
     "targetKey": "href"
+  },
+  {
+    "name": "腾讯文档",
+    "domain": "docs.qq.com",
+    "exactMatch": "https://docs.qq.com/scenario/link.html",
+    "targetKey": "url"
   }
 ]

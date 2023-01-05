@@ -32,7 +32,11 @@
 
 ## 安装包
 
-https://cloud.189.cn/web/share?code=MnQzamjQ732a（访问码：q6sa）
+从 [Releases](https://github.com/Patrick-Jun/Chrome-ContinueToVisit/releases) 列表中找到最新版本，下载 `crx` 包；
+
+浏览器输入：`chrome://extensions/`；
+
+拖拽安装包到浏览器完成安装。
 
 ## 从商店安装
 
