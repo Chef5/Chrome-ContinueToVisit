@@ -46,5 +46,11 @@
     "domain": "docs.qq.com",
     "exactMatch": "https://docs.qq.com/scenario/link.html",
     "targetKey": "url"
+  },
+  {
+    "name": "金山文档",
+    "domain": "www.kdocs.cn",
+    "exactMatch": "www.kdocs.cn/office/link",
+    "targetKey": "target"
   }
 ]
